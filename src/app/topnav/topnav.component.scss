@@ -1,0 +1,18 @@
+mat-toolbar {
+  padding-left: 20px;
+  padding-right: 120px;
+}
+
+mat-icon {
+  display: inline-table;
+  font-size: 30px;
+  margin-right: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.active {
+  color: blueviolet;
+}

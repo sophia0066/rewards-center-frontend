@@ -1,0 +1,12 @@
+<span>
+  <h2>Click on a customer link below to view the details</h2>
+</span>
+<div class="customer-container" fxLayout="row wrap"  fxLayoutGap="16px grid" >
+  <div fxFlex="25%" *ngFor="let customers of customerData">
+    <mat-card class="customer" >
+      <mat-card-content class="card">
+        <a [routerLink]="['/Profiles', customers.id]" > {{customers.name | uppercase}} </a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

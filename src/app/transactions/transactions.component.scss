@@ -1,0 +1,19 @@
+.mat-table{
+  background-color: whitesmoke;
+}
+mat-header-cell{
+  font-size: large;
+  color: darkblue;
+}
+mat-cell {
+  font-family: sans-serif;
+  color: slateblue;
+  flex: content-box;
+}
+.datepicker {
+  flex: content-box;
+  background-color: slateblue;
+}
+mat-label {
+  font-family: sans-serif;
+}

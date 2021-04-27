@@ -1,0 +1,35 @@
+<div class="datepicker">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker" >
+      <input matStartDate formControlName="start" placeholder="Start date">
+      <input matEndDate formControlName="end" placeholder="End date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+  </mat-form-field>
+</div>
+<mat-table  [dataSource]="customerTransactions" class="mat-elevation-z8">
+  <!-- date Column -->
+  <ng-container matColumnDef="Date">
+    <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+    <mat-cell *matCellDef="let customerData"> {{customerData.date }} </mat-cell>
+  </ng-container> -
+
+  <!-- amount Column -->
+  <ng-container matColumnDef="Amount">
+    <mat-header-cell *matHeaderCellDef> Amount (in USD) </mat-header-cell>
+    <mat-cell *matCellDef="let customerData" > {{customerData.amount}} </mat-cell>
+  </ng-container>
+
+  <!-- category Column -->
+  <ng-container matColumnDef="Category">
+    <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+    <mat-cell *matCellDef="let customerData"> {{customerData.category}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+</mat-table>

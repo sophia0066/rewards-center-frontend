@@ -1,0 +1,21 @@
+<div class="details-container" fxLayout="row wrap" fxLayoutGap="25px grid">
+  <div fxFlex="35%" fxFlexOffset="20px">
+    <mat-card class="details-card">
+      <mat-card-header>
+        <mat-card-title>Customer Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="mat-card-content">
+        <div class="content">{{customerDetails.name| uppercase}}</div>
+        <div class="content">Email: {{customerDetails.email}}</div>
+        <div class="content">Cell:  {{customerDetails.phone}}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="25%">
+    <app-rewards-dollar-balance></app-rewards-dollar-balance>
+  </div>
+  <div fxFlex="100%" >
+    <app-transactions></app-transactions>
+  </div>
+</div>
+
